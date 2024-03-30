@@ -1,8 +1,12 @@
 import { defineConfig } from 'astro/config';
+
 import starlight from '@astrojs/starlight';
+// import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://hyphenxu.github.io',
+	base: 'starlight',
 	integrations: [
 		starlight({
 			title: 'My Docs',
@@ -23,5 +27,6 @@ export default defineConfig({
 				},
 			],
 		}),
+		// preact(),
 	],
 });
