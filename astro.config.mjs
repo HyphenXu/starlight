@@ -6,26 +6,40 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://hyphenxu.github.io',
-	base: 'starlight',
+	base: '/starlight',
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Within Control',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/HyphenXu/starlight',
 			},
 			sidebar: [
+                { label: 'Hello World', link: '/hello-world/'},
+                { label: 'Awesome-Orienteering', link: '/awesome/' },
+                { label: 'Competition Formats', link: '/formats/' },
 				{
-					label: 'Guides',
+                    label: 'Standards',
+                    autogenerate: { directory: 'standards' },
+                },
+                {
+					label: 'Mapping',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', link: '/guides/example/' },
+                        { label: 'Introduction', link: '/mapping/intro/' },
+						{ label: 'Mapping with OCAD11', link: '/mapping/ocad11/' },
 					],
 				},
+                {
+                    label: 'Potpourri',
+                    autogenerate: { directory: 'potpourri' }
+                },
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Starlight Notes',
+					autogenerate: { directory: 'starlight-notes' },
 				},
 			],
+            components: {
+                // Hero: './src/components/MyHero.astro',
+            },
 		}),
 		// preact(),
 	],
